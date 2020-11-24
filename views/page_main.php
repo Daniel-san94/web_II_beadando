@@ -9,7 +9,7 @@
     <body>
         <header>
             <div id="user"><em><?= $_SESSION['userlastname']." ".$_SESSION['userfirstname'] ?></em></div>
-            <h1 class="header">Web-programozás II - MVC alkalmazás</h1>
+            <h1 class="header">Segí-tech PC-szervíz</h1>
         </header>
         <nav>
             <?php echo Menu::getMenu($viewData['selectedItems']); ?>
@@ -20,6 +20,6 @@
         <section>
             <?php if($viewData['render']) include($viewData['render']); ?>
         </section>
-        <footer>&copy; NJE - GAMF - Informatika Tanszék <?= date("Y") ?></footer>
+        <footer>&copy; Kozma Dániel - AY60J4 - Webprogramozás 2 beadandó <?= date("Y") ?></footer>
     </body>
 </html>

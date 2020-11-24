@@ -1,8 +1,18 @@
 header, footer {
     padding: 0.5em; 
     color: white;
-    background-color: gray;
+    background-color: #33A2FF;
     clear: left;
+	
+}
+header{
+		text-align: center;
+	}
+body {
+	background-color: antiquewhite;
+	font-family: cursive;    
+    margin: 0px;
+    width: 100%;
 }
 h1.header {
     padding: 0;
@@ -21,26 +31,42 @@ section {
     margin-left: 190px;
     border-left: 1px solid gray;
     padding: 1em;
+	text-align:center;
 }
 ul {
-    float:left;
+    float:center;
     width:100%; /* A menü az alatta levő szövegtől elválik, birtokolja a teljes vízszintes sávját. */
     padding:0;
+	padding-top: 2em;
+	padding-bottom: 2em;
+
     margin:0;
     list-style-type:none;
-    background-color: lightblue;
+    background-color: gray;
 }        
 a {
-    float:left;
-    width:6em; /* Fix szélességű gombok érhetők el. Érdemes azonban vigyázni ezzel a módszerrel, mert ha a szöveg nem fér ki, a dizájn szétesik. */
+    float:center;
+	text-align: center;
+    width:100%; /* Fix szélességű gombok érhetők el. Érdemes azonban vigyázni ezzel a módszerrel, mert ha a szöveg nem fér ki, a dizájn szétesik. */
     text-decoration:none; /* Ne legyen aláhúzva a link. */
     color:white;
-    background-color:navy;
-    padding:0.2em 0.6em;
-    border-right:1px solid white;
+    margin: 0px; 
+	padding-top: 1.25em;
+	padding-bottom: 1.225em;	
+	padding-left: 55px;
+	padding-right: 55px;
+    background-color:gray;
+	font-size: 26px;
+	cursor: pointer;
 }
 a.selected{
-    background-color: blue;
+    background-color: orange;
 }
-a:hover { background-color:#ff3300} /* Az egérkurzorra színváltással reagál a menüpont. */
-li { display:inline } /* Ez a sor oldja meg, hogy a menüpontok egymás mellé kerüljenek. */
+a:hover { background-color:steelblue; transition: 0.5s} /* Az egérkurzorra színváltással reagál a menüpont. */
+li { display:inline-block;
+margin: 0px;
+    background-color:gray;
+
+cursor: pointer;
+transition: 0.5s;
+ } /* Ez a sor oldja meg, hogy a menüpontok egymás mellé kerüljenek. */
