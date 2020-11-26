@@ -21,15 +21,9 @@ h1.header {
 div#user {
     float: right;
 }
-aside {
-    float: left;
-    width: 160px;
-    margin: 0;
-    padding: 1em;
-}
+
 section {
-    margin-left: 190px;
-    border-left: 1px solid gray;
+    
     padding: 1em;
 	text-align:center;
 }
@@ -44,7 +38,7 @@ ul {
     list-style-type:none;
     background-color: gray;
 }        
-a {
+a.navlink {
     float:center;
 	text-align: center;
     width:100%; /* Fix szélességű gombok érhetők el. Érdemes azonban vigyázni ezzel a módszerrel, mert ha a szöveg nem fér ki, a dizájn szétesik. */

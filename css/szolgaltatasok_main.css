@@ -1,0 +1,33 @@
+a.szolg{
+	text-decoration: none;
+	width: 33%;
+}
+.container-item{
+	margin-left:10px; 
+	margin-right:10px; 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 550px;
+}
+/*.container-item:last-child{
+	margin-right:0;
+}*/
+.container{
+	display: flex;
+	flex-direction: row;
+background-color: antiquewhite;
+
+}
+.container-item div img{
+	width: 100%;
+	height: auto;
+	
+}
+.container-item div h2{
+			font-size: 22px;
+	
+}
+.container-item div p{
+	font-size: 18px;
+}

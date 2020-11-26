@@ -40,7 +40,28 @@ class Regisztral_Model
 		$sql= "select email from felhasznalok where email='".$email."'";
 		$stmt = $connection->query($sql);
 		$felhasznalo = $stmt->fetch(PDO::FETCH_ASSOC);
-		if(isset($felhasznalok['email'])){
+		if($felhasznalo==false){
+			return false;
+			
+		}
+		else{
+			return true;
+		}
+		}
+		catch (PODException $e){
+			return false;
+			
+		}
+	}
+	public function letezoBejelentkezes($bejelentkezes)
+	{
+		try
+		{
+		$connection = Database::getConnection();
+		$sql= "select bejelentkezes from felhasznalok where bejelentkezes='".$bejelentkezes."'";
+		$stmt = $connection->query($sql);
+		$felhasznalo = $stmt->fetch(PDO::FETCH_ASSOC);
+		if($felhasznalo==false){
 			return false;
 			
 		}

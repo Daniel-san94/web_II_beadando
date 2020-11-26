@@ -42,7 +42,7 @@ class Regisztralt_Controller
 	
 		else {
           if ($regisztralModel->letezoEmail($data['email'])) {
-            $data['email_error'] = 'Ez az email cím már látezik';
+            $data['email_error'] = 'Ez az email cím már létezik';
 		}}
 		if (empty($data['jelszo'])) {
           $data['jelszo_error'] = 'Adja meg a jelszót';
@@ -56,6 +56,10 @@ class Regisztralt_Controller
 		if (empty($data['bejelentkezes'])) {
           $data['bejelentkezes_error'] = 'Adja meg a bejelentkezési nevet';
         } 
+		
+         else { if ($regisztralModel->letezoBejelentkezes($data['bejelentkezes'])) {
+            $data['bejelentkezes_error'] = 'Létező felhasználónév';
+	}}
 		
 		if (
           empty($data['csaladi_nev_error']) && 

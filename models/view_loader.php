@@ -6,6 +6,7 @@ class View_Loader
     private $render = FALSE;
     private $selectedItems = FALSE;
     private $style = FALSE;
+	private $messages = array();
 
     public function __construct($viewName)
     {
@@ -24,15 +25,21 @@ class View_Loader
 
     public function assign($variable , $value)
     {
-        $this->data[$variable] = $value;
+        $this->messages[$variable] = $value;
     }
+	public function addData($info)
+	{
+		$this->data = $info;
+		
+	}
 
     public function __destruct()
     {
-        $this->data['render'] = $this->render;
-        $this->data['selectedItems'] = $this->selectedItems;
-        $this->data['style'] = $this->style;
-        $viewData = $this->data;
+        $this->messages['render'] = $this->render;
+        $this->messages['selectedItems'] = $this->selectedItems;
+        $this->messages['style'] = $this->style;
+        $viewData = $this->messages;
+	    $viewInfo = $this->data;
         include(SERVER_ROOT . 'views/page_main.php');
     }
 }

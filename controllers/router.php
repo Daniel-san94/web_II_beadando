@@ -22,10 +22,11 @@ if($request != "")
 {
 	$params = explode('/', $request);
 	$page = array_shift($params); // a kért oldal neve
-	
+
 	if(array_key_exists($page, Menu::$menu) && count($params)>0) // Az oldal egy menüpont oldala és van még adat az url-ben
 	{
 		$subpage = array_shift($params); // a kért aloldal
+
 		if(! (array_key_exists($subpage, Menu::$menu) && Menu::$menu[$subpage][1] == $page)) // ha nem egy alolal
 		{
 			$vars[] = $subpage; // akkor ez egy parameter
@@ -44,7 +45,7 @@ if($request != "")
 // Meghatározzuk a kért oldalhoz tartozó vezérlõt. Ha megtaláltuk
 // a fájlt és a hozzá tartozó vezérlõ oldalt is, akkor betöltjük az
 // elõbbiekben lekérdezett paramétereket továbbadva. 
-
+echo $subpage;
 $controllerfile = $page.($subpage != "" ? "_".$subpage : "");
 $target = SERVER_ROOT.'controllers/'.$controllerfile.'.php';
 if(! file_exists($target))
