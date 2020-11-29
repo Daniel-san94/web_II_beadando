@@ -6,17 +6,33 @@ class Szolgaltatasok_Controller
 	public function main(array $vars) // a router által továbbított paramétereket kapja
 	{
 		$szolgaltatasokModel = new Szolgaltatasok_Model;
-		$retData = $szolgaltatasokModel->osszesSzolgaltatas();
 		$view = new View_Loader($this->baseName."_main");
-		if(isset($retData['eredmeny'])){
-			foreach($retData as $name => $value)
-				$view->assign($name,$value);
-		}
-		else{
-			$view->addData($retData);
+
+		if (isset($_GET['szolgaltatasok/id']) && $_GET['szolgaltatasok/id'] !== "") {
+			$szolgaltatasId = $_GET['szolgaltatasok/id'];
+			$retData = $szolgaltatasokModel->szolgaltatasIDAlapjan($szolgaltatasId);
+			if (isset($retData['eredmény'])) {
+				foreach($retData as $name => $value)
+					$view->assign($name,$value);
+			} else {
+				$view->addData($retData);
+			}
+
+		} else {
 			
+			$retData = $szolgaltatasokModel->osszesSzolgaltatas();
+			
+			if(isset($retData['eredmény'])){
+				foreach($retData as $name => $value)
+					$view->assign($name,$value);
+			}
+			else{
+				$view->addData($retData);
+				
+			}
 		}
-		//betöltjük a nézetet
+
+
 		
 		
 	}

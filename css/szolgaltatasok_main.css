@@ -2,6 +2,10 @@ a.szolg{
 	text-decoration: none;
 	width: 33%;
 }
+a.szolg:hover{
+	
+	background-color:#60C903; transition: 0.5s
+}
 .container-item{
 	margin-left:10px; 
 	margin-right:10px; 
@@ -26,8 +30,9 @@ background-color: antiquewhite;
 }
 .container-item div h2{
 			font-size: 22px;
-	
+			color: black;
 }
 .container-item div p{
 	font-size: 18px;
+	color: black;
 }
