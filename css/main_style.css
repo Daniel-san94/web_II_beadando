@@ -9,7 +9,7 @@ header{
 		text-align: center;
 	}
 body {
-	background-color: antiquewhite;
+	/* background-color: antiquewhite; */
 	font-family: cursive;    
     margin: 0px;
     width: 100%;
@@ -18,18 +18,48 @@ h1.header {
     padding: 0;
     margin: 0;
 }
-div#user {
-    float: right;
+
+div#details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+div#bg-color {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+div#bg-color > * {
+    padding: 0;
+    margin: 0;
+}
+
+div#bg-color > p {
+    margin-right: 20px;
+}
+
+div#bg-color > button {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 4px 8px;
+}
+
+
 section {
-    
+	margin-left: auto;
+	margin-right: auto;
+    width: 80%;
     padding: 1em;
 	text-align:center;
 }
 ul {
     float:center;
-    width:100%; /* A menü az alatta levő szövegtől elválik, birtokolja a teljes vízszintes sávját. */
+    width:100%; 
     padding:0;
 	padding-top: 2em;
 	padding-bottom: 2em;
@@ -41,8 +71,8 @@ ul {
 a.navlink {
     float:center;
 	text-align: center;
-    width:100%; /* Fix szélességű gombok érhetők el. Érdemes azonban vigyázni ezzel a módszerrel, mert ha a szöveg nem fér ki, a dizájn szétesik. */
-    text-decoration:none; /* Ne legyen aláhúzva a link. */
+    width:100%; 
+    text-decoration:none;
     color:white;
     margin: 0px; 
 	padding-top: 1.25em;
@@ -56,11 +86,11 @@ a.navlink {
 a.selected{
     background-color: orange;
 }
-a:hover { background-color:steelblue; transition: 0.5s} /* Az egérkurzorra színváltással reagál a menüpont. */
+a:hover { background-color:steelblue; transition: 0.5s}
 li { display:inline-block;
 margin: 0px;
     background-color:gray;
 
 cursor: pointer;
 transition: 0.5s;
- } /* Ez a sor oldja meg, hogy a menüpontok egymás mellé kerüljenek. */
+ }

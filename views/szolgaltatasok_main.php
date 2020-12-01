@@ -1,11 +1,12 @@
-<h2>Szolgáltatások</h2>
 
-<?php echo $_SESSION['username']; ?>
-  
+
+<script>
+    soap();
+</script>
 <!--Ellenőrizzük, hogy viewInfo asszociációs tömb e, ha igen, akkor 1 szolgáltatás jelenik meg, ha nem akkor több. -->
 <?php if (array_keys($viewInfo) !== range(0, count($viewInfo) - 1)): ?>
-    <div class="container">
-        <div class="container-item">
+    <div class="szolg-container">
+        <div class="szolg-container-item">
             <div>
             <h2>
                 <?php echo $viewInfo['szolgaltatas'][0]->nev; ?>
@@ -18,7 +19,7 @@
             </h2>
             </div>
             <div>
-            <img src="<?php echo $viewInfo['szolgaltatas'][0]->kep_url; ?>"/>
+            <img class="image" src="<?php echo $viewInfo['szolgaltatas'][0]->kep_url; ?>"/>
             </div>
         </div>
     </div>
@@ -29,11 +30,18 @@
             <div class="hozzaszolas" id="hid-<?php echo $hozzaszolas->id ?>">
             <p><?php echo $hozzaszolas->hozzaszolo  ?> </p>
             <p class="velemeny"><?php echo $hozzaszolas->velemeny  ?> </p>
-            <p><?php echo $hozzaszolas->datum  ?> </p>
+            <p class="datum"><?php echo $hozzaszolas->datum  ?> </p>
             <?php if ($_SESSION['username'] == $hozzaszolas->hozzaszolo  ): ?>
-            <button onclick="velemenyszerkesztes(<?php echo $hozzaszolas->datum ?>)">&#9998;</button>
-            <button>&#128465;</button>
+            <button class="btn edit-button" onclick="velemenyszerkesztes('<?php echo $hozzaszolas->id ?>')">&#9998;</button>
+            <button class="btn delete-button" onclick="velemenytorles('<?php echo $hozzaszolas->id ?>')">&#128465;</button>
+            <p class="error-uzenet"></p>
+            <p class="torles-megerosites"></p>
             <?php endif; ?>
+            
+            <?php if ($_SESSION['userlevel'] == '__1' && $_SESSION['username'] !== $hozzaszolas->hozzaszolo ): ?>
+                <button class="btn delete-button" onclick="velemenytorles('<?php echo $hozzaszolas->id ?>')">&#128465;</button>
+                <p class="torles-megerosites"></p>
+            <?php endif; ?>  
 
             </div>
         <?php endforeach; ?>
@@ -46,10 +54,11 @@
             <input type="hidden" name="action" value="add">
             <input type="submit"  value="Hozzászólás"><br>
             </form>
-    <a href="<?php echo SITE_ROOT. "szolgaltatasok" ?>">
+    <a class="vissza" href="<?php echo SITE_ROOT. "szolgaltatasok" ?>">
     Vissza
     </a>
 <?php elseif (array_keys($viewInfo) == range(0, count($viewInfo) - 1)): ?>
+<h2>Szolgáltatások</h2>
     <div class="container">
         <?php foreach($viewInfo as $szolgaltatas): ?>
                 <a class="szolg" href="<?php echo SITE_ROOT. "szolgaltatasok/id=". $szolgaltatas->id; ?>"/>

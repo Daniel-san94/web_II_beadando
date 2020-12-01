@@ -18,14 +18,13 @@ class Beleptet_Model
 				case 1:
 					$retData['eredmény'] = "OK";
 					$retData['uzenet'] = "Kedves ".$felhasznalo[0]['csaladi_nev']." ".$felhasznalo[0]['utonev']."!<br><br>
-					                      Jó munkát kívánunk rendszerünkkel.<br><br>
-										  Az üzemeltetők";
+					                      Köszöntjük a Segí-tech PC-nél.<br><br>
+										  Kérjük válasszon szolgáltatásaink közül";
 					$_SESSION['userid'] =  $felhasznalo[0]['id'];
 					$_SESSION['userlastname'] =  $felhasznalo[0]['csaladi_nev'];
 					$_SESSION['userfirstname'] =  $felhasznalo[0]['utonev'];
 					$_SESSION['userlevel'] = $felhasznalo[0]['jogosultsag'];
 					$_SESSION['username'] = $felhasznalo[0]['bejelentkezes'];
-
 					Menu::setMenu();
 					break;
 				default:

@@ -3,8 +3,8 @@ a.szolg{
 	width: 33%;
 }
 a.szolg:hover{
-	
-	background-color:#60C903; transition: 0.5s
+	background-color:#60c903;
+	transition: 0.5s;
 }
 .container-item{
 	margin-left:10px; 
@@ -17,6 +17,7 @@ a.szolg:hover{
 /*.container-item:last-child{
 	margin-right:0;
 }*/
+
 .container{
 	display: flex;
 	flex-direction: row;
@@ -30,9 +31,65 @@ background-color: antiquewhite;
 }
 .container-item div h2{
 			font-size: 22px;
-			color: black;
+			color:black;
 }
 .container-item div p{
 	font-size: 18px;
-	color: black;
+	color:black;
 }
+
+.szolg-container {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.szolg-container-item {
+	display: flex;
+	flex-direction: column;
+	height: 500px;
+	align-items: center;
+	justify-content: center;
+}
+
+.szolg-container-item div {
+	width: 100%;
+	height: auto;
+}
+
+.szolg-container-item .image {
+	width: 50%;
+}
+
+.hozzaszolas-container {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hozzaszolas {
+	padding: 20px;
+	border-bottom: 2px solid black;
+
+}
+
+.hozzaszolas > * {
+	padding: 0;
+	margin: 10px 0;
+}
+
+.btn {
+	padding: 5px 10px;
+}
+
+.delete-button {
+	background-color: lightcoral;
+}
+.vissza{
+	text-decoration:none;
+	color:red;
+}
+
+

@@ -73,9 +73,8 @@ public function velemenyHozzaadas($data){
 		$retData['uzenet'] = "Adatbázis hiba: ".$e->getMessage()."!";
 	}
 	return $retData;
-
-
 }
+
 
 
 }

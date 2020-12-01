@@ -47,8 +47,8 @@ class Regisztralt_Controller
 		if (empty($data['jelszo'])) {
           $data['jelszo_error'] = 'Adja meg a jelszót';
         } 
-		elseif (strlen($data['jelszo'])<8){
-			$data['jelszo'] = 'A jelszónak minimum 8 karakter hosszúnak kell lennie.';
+		elseif (strlen($data['jelszo'])<5){
+			$data['jelszo_error'] = 'A jelszónak minimum 5 karakter hosszúnak kell lennie.';
 		}
 		/*elseif (!preg_match($passwordValidation, $data['jelszo'])) {
           $data['jelszo_error'] = 'A jelszónak tartalmaznia kell legalább egy számot.';

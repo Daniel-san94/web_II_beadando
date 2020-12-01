@@ -5,6 +5,7 @@ class Szolgaltatasok_Controller
 	public $baseName = 'szolgaltatasok';  //meghatározni, hogy melyik oldalon vagyunk
 	public function main(array $vars) // a router által továbbított paramétereket kapja
 	{
+
 		$szolgaltatasokModel = new Szolgaltatasok_Model;
 		$view = new View_Loader($this->baseName."_main");
 
@@ -35,6 +36,10 @@ class Szolgaltatasok_Controller
 
 		
 		
+	}
+
+	public function add() {
+		echo "add function called";
 	}
 	
 }

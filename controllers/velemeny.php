@@ -5,9 +5,8 @@ class Velemeny_Controller
     public $baseName = 'szolgaltatasok';  
     
     public function main(array $vars)
-    {
+    {      
 
-        print_r($_PUT);
         if(isset($_POST['action'])){
 
             $szolgaltatasokModel = new Szolgaltatasok_Model;
@@ -41,13 +40,7 @@ class Velemeny_Controller
                 }
 
         }
-		
-			
-
     }
 
-
-
 }
-
 ?>

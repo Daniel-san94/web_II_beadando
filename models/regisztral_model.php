@@ -12,12 +12,13 @@ class Regisztral_Model
 			$sth = $connection->prepare($sql);
 			if($sth->execute(Array(':csaladi_nev' => $vars['csaladi_nev'], ':utonev' => $vars['utonev'],
 			':bejelentkezes' => $vars['bejelentkezes'], ':email' => $vars['email'], 
-			':jelszo' => sha1($vars['jelszo'])
+			':jelszo' => $vars['jelszo']
+			
 			)))
 			{
 				$retData['eredmeny'] = "OK";
-				$retData['uzenet'] = "Sikeres regisztráció ".$vars['csaladi_nev']. 
-				$vars['utonev']."!<br>";
+				$retData['uzenet'] = "Sikeres regisztráció ".$vars['csaladi_nev']. " " .
+				$vars['utonev']."!<br>"; 
 			}
 			/*else
 			{
@@ -42,7 +43,6 @@ class Regisztral_Model
 		$felhasznalo = $stmt->fetch(PDO::FETCH_ASSOC);
 		if($felhasznalo==false){
 			return false;
-			
 		}
 		else{
 			return true;
